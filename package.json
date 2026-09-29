@@ -1,0 +1,20 @@
+{
+  "name": "shubh-caterers-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shubh Caterers — pure veg catering website (static, deployed on Netlify)",
+  "type": "module",
+  "scripts": {
+    "generate": "python generate.py",
+    "build": "node scripts/build.mjs",
+    "dev": "netlify dev",
+    "deploy:preview": "npm run build && netlify deploy --dir=dist",
+    "deploy": "npm run build && netlify deploy --dir=dist --prod"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.10.2"
+  }
+}

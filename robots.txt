@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /public/
+Sitemap: https://shubhcaterers.example/sitemap.xml
