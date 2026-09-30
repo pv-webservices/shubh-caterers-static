@@ -67,6 +67,7 @@ def home():
 <p class="hero-badge"><span class="veg-dot"></span>100% Pure Vegetarian Catering · Pune</p>
 <p class="eyebrow gold hero-eyebrow">Flavours for Every Celebration</p>
 <h1 class="hero-title"><span class="line"><span>Making Every</span></span><span class="line"><span>Occasion <em>Special</em></span></span></h1>
+<p class="hero-promise">We are a part of your celebration</p>
 <p class="hero-text">At Shubh Caterers, we bring people together with exceptional vegetarian food, memorable experiences and heartfelt hospitality.</p>
 <div class="hero-actions">{btn('Explore Our Services', 'services.html')}
 <button class="watch-btn" data-lightbox="hero-video" data-type="video" data-src="assets/video/event-1.mp4" data-poster="assets/img/event-1-poster.webp" data-title="Shubh Caterers — live counters at a reception"><span class="watch-ring">{icon('play', 18)}</span><span>Watch Video</span></button></div>
