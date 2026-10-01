@@ -8,9 +8,8 @@ from templates import (ROOT, PHONE_1, PHONE_2, WA_URL, MAP_URL, img, btn, headin
                        document)
 
 DISH_COUNT = len({d for c in MENU for d in c[4]})
-STALL_COUNT = len(MENU[-1][4])
-STATS = [(len(SERVICES), '', 'Occasions We Cater'), (DISH_COUNT // 50 * 50, '+', 'Vegetarian Dishes'),
-         (STALL_COUNT, '', 'Live Counter Options'), (100, '%', 'Pure Vegetarian')]
+STATS = [(15, '+', 'Occasions We Cater'), (DISH_COUNT // 50 * 50, '+', 'Vegetarian Dishes'),
+         (30, '+', 'Live Counter Options'), (100, '%', 'Pure Vegetarian')]
 FEATURES = [('sparkle', 'Hygienic Preparation'), ('cloche', 'Customised Menus'), ('team', 'Experienced Team'), ('diamond', 'Quality Ingredients')]
 MARQUEE = ['Paneer Tikka', 'Pani Puri', 'Dal Makhani', 'Mango Mastani', 'Masala Dosa', 'Kaju Katli', 'Veg Biryani',
            'Misal Pav', 'Kesar Rabdi', 'Chilli Paneer', 'Puran Puri', 'Pav Bhaji', 'Jalebi', 'Malai Kofta']
@@ -90,7 +89,7 @@ def home():
 <div class="ac ac-3" data-parallax="0.1">{img('hero-feast', 'Pure vegetarian feast spread', R, '(max-width: 900px) 70vw, 420px')}</div>
 <div class="quote-ribbon" data-parallax="-0.05"><span>Good Food<br>Brings People<br>Together</span></div></div>
 <div class="about-copy" data-reveal="right">{heading('About Shubh Caterers', 'A Passion for <em>Food,</em><br>A Commitment to', 'Excellence', left=True)}
-<p>Shubh Caterers is a Pune-based pure vegetarian catering service known for delicious food, elegant presentation and seamless execution. From our home at Tirupati Garden, Tingre Nagar, we create memorable culinary experiences for weddings, corporate events, private parties and family celebrations.</p>
+<p>Shubh Caterers is a Pune-based pure vegetarian catering service known for delicious food, elegant presentation and seamless execution. From our home in Dhanori, we create memorable culinary experiences for weddings, corporate events, private parties and family celebrations.</p>
 <ul class="feature-row">{features}</ul>{btn('Know More About Us', 'about.html')}</div></div></section>'''
 
     stats = ''.join(f'<div class="stat" data-reveal><strong><span data-count="{n}">0</span>{suf}</strong><span>{l}</span></div>' for n, suf, l in STATS)
@@ -140,10 +139,10 @@ def about():
               ('sparkle', 'Hygiene First', 'Clean kitchens, gloved and masked service staff, and covered, labelled food at the counter.'),
               ('cloche', 'Menus Made for You', f'Choose from {DISH_COUNT}+ dishes, or ask for your family favourites. We tailor every menu.'),
               ('team', 'A Team That Cares', 'Uniformed, courteous staff who keep counters stocked and guests smiling.'),
-              ('flame', 'Live Counter Theatre', f'{STALL_COUNT} live stalls — from pani puri and dosa to barf gola and paan.'),
+              ('flame', 'Live Counter Theatre', '30+ live stalls — from pani puri and dosa to barf gola and paan.'),
               ('star', 'Presentation that Wows', 'Carved back-lit counters, brass handis and floral styling that elevate your venue.')]
     cards = ''.join(f'<article class="value-card tilt" data-reveal="zoom"><span class="value-ic">{icon(i, 30, stroke=1.4)}</span><h3>{t}</h3><p>{d}</p></article>' for i, t, d in values)
-    body = page_hero('About Us', 'A Passion for Food,', 'A Commitment to Excellence', 'Pure vegetarian catering from Tingre Nagar, Pune — crafted with love, served with pride.', 'about-counter', R) + f'''
+    body = page_hero('About Us', 'A Passion for Food,', 'A Commitment to Excellence', 'Pure vegetarian catering from Dhanori, Pune — crafted with love, served with pride.', 'about-counter', R) + f'''
 <section class="section"><div class="container two-col">
 <div class="stacked-media" data-reveal="left"><div class="sm-main" data-parallax="0.05">{img('about-chef', 'Chef preparing paneer tikka masala', R, '(max-width: 900px) 90vw, 460px')}</div><div class="sm-float" data-parallax="-0.08">{img('menu-chaat', 'Live chaat counter', R, '(max-width: 900px) 45vw, 240px')}</div><div class="exp-badge"><strong>100%</strong><span>Pure Veg</span></div></div>
 <div class="prose" data-reveal="right">{heading('Our Story', 'Where Every Occasion', 'Becomes Shubh', left=True)}
@@ -153,7 +152,7 @@ def about():
 <div class="hero-actions">{btn('Get a Free Quote', 'contact.html#quote')}{btn('View Our Menu', 'menu.html', 'outline', 'menu-book')}</div></div></div></section>
 <section class="section alt"><div class="container">{heading('Why Choose Us', 'What Makes Us', 'Shubh', 'Six promises we keep at every event.')}<div class="value-grid">{cards}</div></div></section>
 <section class="section showcase compact"><div class="container">{heading('Behind the Scenes', 'Our Team', 'at Work')}<div class="video-row">{''.join(video_card(v, R) for v in VIDEOS[:3])}</div></div></section>''' + inquiry(R)
-    write('about.html', document('About Us', 'Shubh Caterers is a pure vegetarian catering company in Tingre Nagar, Pune, led by Pawan Agarwal and Ajay Agarwal — weddings, corporate events and celebrations.', body, R, 'About Us'))
+    write('about.html', document('About Us', 'Shubh Caterers is a pure vegetarian catering company in Dhanori, Pune, led by Pawan Agarwal and Ajay Agarwal — weddings, corporate events and celebrations.', body, R, 'About Us'))
 
 
 # ---------------------------------------------------------------- SERVICES
@@ -172,7 +171,7 @@ def service_page(s):
     others = [o for o in SERVICES if o[0] != slug][:4]
     faq = [('Can the menu be customised?', f'Yes. Pick from our {DISH_COUNT}+ dish menu or ask for family favourites — we shape it around your guests and budget.'),
            ('Is the food pure vegetarian?', 'Yes, 100%. Shubh Caterers is a strictly pure-vegetarian caterer.'),
-           ('Can live counters be included?', f'Yes — choose from {STALL_COUNT} live stalls such as pani puri, dosa, pav bhaji, Chinese and more, subject to venue logistics.')]
+           ('Can live counters be included?', 'Yes — choose from 30+ live stalls such as pani puri, dosa, pav bhaji, Chinese and more, subject to venue logistics.')]
     related = ''.join(f'<a class="related-card tilt" href="{o[0]}.html">{img(o[4], o[1], R, "260px")}<span>{icon(o[3], 20)} {escape(o[2])}</span></a>' for o in others)
     video = VIDEOS[SERVICES.index(s) % len(VIDEOS)]
     body = page_hero(short, title, '', summary, image, R, [('services.html', 'Services')]) + f'''
@@ -234,13 +233,13 @@ def contact():
     tiles = [('phone', 'Call ' + n1, p1, f'tel:+91{p1}'), ('phone', 'Call ' + n2, p2, f'tel:+91{p2}'),
              ('whatsapp', 'WhatsApp', 'Chat with us instantly', WA_URL), ('mail', 'Email', BUSINESS['email'], f"mailto:{BUSINESS['email']}")]
     info = ''.join(f'<a class="info-card tilt" href="{h}"{" target=_blank rel=noopener" if h.startswith("http") else ""} data-reveal="zoom"><span class="info-ic">{icon(i, 24)}</span><small>{escape(t)}</small><strong>{escape(v)}</strong></a>' for i, t, v, h in tiles)
-    map_src = 'https://www.google.com/maps?q=' + BUSINESS['map_query'].replace(' ', '+').replace(',', '%2C') + '&output=embed'
+    map_src = f"https://maps.google.com/maps?q={BUSINESS['map_coords']}&z=17&output=embed"
     body = page_hero('Contact Us', 'Let’s Plan Your', 'Celebration', 'Tell us about your event and we will get back with a tailored menu and quote.', 'about-counter', R) + f'''
 <section class="section"><div class="container"><div class="info-grid">{info}</div>
 <div class="contact-grid" id="quote"><div class="quote-card big" data-reveal="left"><h2>Get a Free Quote</h2><p class="quote-sub">Share a few details — it takes less than a minute.</p>{quote_form()}</div>
 <div class="contact-side" data-reveal="right"><div class="map-card"><iframe title="Shubh Caterers location on Google Maps" src="{map_src}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 <div class="address-card"><span class="info-ic">{icon('pin', 24)}</span><div><h3>Visit Us</h3><p>{'<br>'.join(BUSINESS['address_lines'])}</p>{btn('Get Directions', MAP_URL, 'text', 'arrow', ' target="_blank" rel="noopener"')}</div></div></div></div></div></section>'''
-    write('contact.html', document('Contact Us', 'Contact Shubh Caterers, Tirupati Garden, Tingre Nagar, Pune — call 9595956709 / 9822323230 or send an enquiry for pure vegetarian catering.', body, R, 'Contact Us'))
+    write('contact.html', document('Contact Us', 'Contact Shubh Caterers, Bhairvnagar, Dhanori, Pune — call 9595956709 / 9822323230 or send an enquiry for pure vegetarian catering.', body, R, 'Contact Us'))
 
 
 # ---------------------------------------------------------------- FAQ & PRIVACY

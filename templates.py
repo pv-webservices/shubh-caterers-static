@@ -19,7 +19,7 @@ NAV = [
 ]
 PHONE_1, PHONE_2 = BUSINESS['phones'][0][1], BUSINESS['phones'][1][1]
 WA_URL = f"https://wa.me/{BUSINESS['whatsapp']}"
-MAP_URL = 'https://www.google.com/maps/search/?api=1&query=' + BUSINESS['map_query'].replace(' ', '+').replace(',', '%2C')
+MAP_URL = BUSINESS['map_url']
 
 
 def width_of(name):
@@ -56,7 +56,7 @@ def heading(eyebrow, title, accent='', text='', light=False, left=False):
 def topbar():
     return f'''<div class="topbar"><div class="container topbar-inner">
 <div class="topbar-group"><a href="tel:+91{PHONE_1}">{icon('phone', 14)} {PHONE_1}</a><span class="sep">|</span><a href="tel:+91{PHONE_2}">{PHONE_2}</a><span class="sep hide-sm">|</span><a class="hide-sm" href="mailto:{BUSINESS['email']}">{icon('mail', 14)} {BUSINESS['email']}</a></div>
-<a class="topbar-address" href="{MAP_URL}" target="_blank" rel="noopener">{icon('pin', 14)} Tirupati Garden, Tingre Nagar, Pune - 411015</a>
+<a class="topbar-address" href="{MAP_URL}" target="_blank" rel="noopener">{icon('pin', 14)} Bhairvnagar, Dhanori, Pune - 411015</a>
 </div></div>'''
 
 
@@ -153,7 +153,7 @@ def schema_business():
         'description': 'Pure vegetarian catering for weddings, corporate events and celebrations in Pune.',
         'servesCuisine': ['Vegetarian', 'North Indian', 'Maharashtrian', 'South Indian', 'Indo-Chinese'],
         'telephone': [f'+91-{PHONE_1}', f'+91-{PHONE_2}'], 'email': BUSINESS['email'],
-        'address': {'@type': 'PostalAddress', 'streetAddress': 'Tirupati Garden, Hall No. 2, Tingre Nagar, Aadarsh Colony',
+        'address': {'@type': 'PostalAddress', 'streetAddress': 'Sr. No. 51, Plot No. 117, Lane No. 9, Bhairvnagar, Dhanori',
                     'addressLocality': 'Pune', 'postalCode': '411015', 'addressRegion': 'Maharashtra', 'addressCountry': 'IN'},
         'url': BUSINESS['domain'] + '/',
     }

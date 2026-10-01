@@ -5,9 +5,10 @@ BUSINESS = {
     'phones': [('Pawan Agarwal', '9595956709'), ('Ajay Agarwal', '9822323230')],
     'whatsapp': '919595956709',
     'email': 'shubhcaterers009@gmail.com',
-    'address_lines': ['Tirupati Garden, Hall No. 2,', 'Tingre Nagar, Aadarsh Colony,', 'Pune - 411015, Maharashtra'],
-    'address_short': 'Tirupati Garden, Hall No. 2, Tingre Nagar, Aadarsh Colony, Pune - 411015',
-    'map_query': 'Tirupati Garden, Tingre Nagar, Pune 411015',
+    'address_lines': ['Sr. No. 51, Plot No. 117, Lane No. 9,', 'Bhairvnagar, Dhanori,', 'Pune - 411015, Maharashtra'],
+    'address_short': 'Sr. No. 51, Plot No. 117, Lane No. 9, Bhairvnagar, Dhanori, Pune - 411015',
+    'map_url': 'https://maps.app.goo.gl/AqQEvxm9zxHXycdv7',
+    'map_coords': '18.586014,73.886506',
     'domain': 'https://shubhcaterers.example',
 }
 
@@ -170,7 +171,7 @@ VIDEOS = [
     ('event-1', 'Illuminated Live Counters', 'Our signature carved, back-lit counters at a night reception.'),
     ('event-3', 'Grand Buffet Line-up', 'A full buffet line-up, staffed and ready before guests arrive.'),
     ('event-4', 'Banquet Hall Service', 'Uniformed service team at a banquet dinner.'),
-    ('event-5', 'Garden Chaat Counter', 'Fresh chaat and soup counter at an outdoor event.'),
+    ('event-5', 'Garden Buffet Service', 'Brass handis and fresh starters served at an outdoor garden event.'),
     ('event-2', 'Hygienic Buffet Service', 'Masked, gloved staff serving from brass chafing dishes.'),
     ('event-6', 'Labelled Brass Handis', 'Every dish clearly labelled for guests.'),
 ]
@@ -188,7 +189,7 @@ GALLERY = [
     ('event-4-poster', 'Banquet Service Team', 'Real Events'),
     ('svc-traditional', 'Griha Pravesh Pangat', 'Setups'),
     ('menu-drinks', 'Welcome Drinks Bar', 'Food'),
-    ('event-5-poster', 'Garden Soup Counter', 'Real Events'),
+    ('event-5-poster', 'Garden Buffet Service', 'Real Events'),
     ('svc-birthday', 'Birthday Dessert Table', 'Setups'),
     ('menu-south', 'South Indian Spread', 'Food'),
     ('event-2-poster', 'Hygienic Buffet Service', 'Real Events'),
@@ -220,6 +221,6 @@ FAQS = [
     ('Do you provide live counters?', 'Yes — pani puri, chaat, dosa, pav bhaji, pizza, momos, Chinese, barf gola, ice cream, paan and more, depending on the venue and menu plan.'),
     ('How is pricing decided?', 'Pricing depends on the menu, guest count, service format and venue. Share your requirements and we will send a clear, no-obligation quote.'),
     ('How early should I book?', 'For weddings and large events, we recommend booking as early as possible, especially during the wedding season. Smaller events can often be arranged at shorter notice — just call us.'),
-    ('Do you serve outside Pune?', 'We are based in Tingre Nagar, Pune. For events in other areas or outstation venues, please call us to discuss logistics.'),
+    ('Do you serve outside Pune?', 'We are based in Dhanori, Pune. For events in other areas or outstation venues, please call us to discuss logistics.'),
     ('How do I request a quote?', 'Fill the enquiry form (it opens WhatsApp with your details), call 9595956709 / 9822323230, or email shubhcaterers009@gmail.com.'),
 ]

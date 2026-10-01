@@ -28,7 +28,7 @@ python generate.py
 - `assets/css/` — `base.css` (tokens, buttons, header/footer), `sections.css` (home sections), `pages.css` (inner pages)
 - `assets/js/main.js` — hero slideshow, pinned horizontal menu, parallax, zoom band, sticky stacks, lightbox, carousel, filters, scroll-spy, WhatsApp enquiry form
 - `assets/img/` — WebP images (`*-sm.webp` = 640px mobile versions) and video posters
-- `assets/video/` — web-optimised copies of the six client videos (`event-N.mp4`) and short muted loops (`event-N-loop.mp4`)
+- `assets/video/` — web-optimised copies of the six client videos in `public/video/` (`video-N.mp4` → `event-N.mp4`) and short muted loops (`event-N-loop.mp4`)
 - `assets/brand/` — transparent logo and favicons
 
 ## Enquiry form
