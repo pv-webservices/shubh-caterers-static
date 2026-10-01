@@ -1,0 +1,188 @@
+{
+ "events/birthday-dessert-table": {
+  "height": 848,
+  "width": 1264,
+  "widths": [
+   480,
+   800,
+   1264
+  ]
+ },
+ "events/corporate-lunch-buffet": {
+  "height": 848,
+  "width": 1264,
+  "widths": [
+   480,
+   800,
+   1264
+  ]
+ },
+ "events/griha-pravesh-pangat": {
+  "height": 848,
+  "width": 1264,
+  "widths": [
+   480,
+   800,
+   1264
+  ]
+ },
+ "food/indo-chinese-platter": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/live-chaat-counter": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/maharashtrian-breakfast": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/mithai-platter": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/paneer-butter-masala": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/pure-veg-feast": {
+  "height": 768,
+  "width": 1376,
+  "widths": [
+   480,
+   800,
+   1200,
+   1376
+  ]
+ },
+ "food/south-indian-spread": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "food/welcome-drinks": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "team/chef-garnishing-curry": {
+  "height": 1152,
+  "width": 928,
+  "widths": [
+   480,
+   800,
+   928
+  ]
+ },
+ "venues/brass-handi-counter": {
+  "height": 1024,
+  "width": 1024,
+  "widths": [
+   480,
+   800,
+   1024
+  ]
+ },
+ "venues/reception-dining-hall": {
+  "height": 768,
+  "width": 1376,
+  "widths": [
+   480,
+   800,
+   1200,
+   1376
+  ]
+ },
+ "venues/wedding-buffet-night": {
+  "height": 768,
+  "width": 1376,
+  "widths": [
+   480,
+   800,
+   1200,
+   1376
+  ]
+ },
+ "video-posters/event-1": {
+  "height": 480,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ },
+ "video-posters/event-2": {
+  "height": 480,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ },
+ "video-posters/event-3": {
+  "height": 480,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ },
+ "video-posters/event-4": {
+  "height": 478,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ },
+ "video-posters/event-5": {
+  "height": 478,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ },
+ "video-posters/event-6": {
+  "height": 478,
+  "width": 848,
+  "widths": [
+   480,
+   848
+  ]
+ }
+}

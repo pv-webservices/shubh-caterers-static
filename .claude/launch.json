@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "shubh-static",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8080"],
-      "port": 8080
+      "name": "shubh-netlify-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["netlify", "dev", "--offline", "--port", "8888"],
+      "port": 8888
     }
   ]
 }

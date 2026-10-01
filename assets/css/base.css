@@ -87,7 +87,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav-link::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--red), var(--gold)); transform: scaleX(0); transition: transform .4s var(--ease); }
 .nav-link:hover, .nav-link[aria-current] { color: var(--red); }
 .nav-link:hover::after, .nav-link[aria-current]::after { transform: scaleX(1); }
-.drop-toggle { display: grid; place-items: center; width: 22px; height: 22px; margin-left: -6px; color: var(--red); transform: rotate(90deg); transition: transform .3s; }
+.drop-toggle { display: grid; place-items: center; width: 32px; height: 32px; margin-left: -10px; border-radius: 50%; color: var(--red); transform: rotate(90deg); transition: transform .3s; }
 .dropdown { position: absolute; top: calc(100% + 12px); left: 50%; width: 560px; padding: 18px; border-radius: var(--radius); background: #fffaf2; box-shadow: var(--shadow-lg); border: 1px solid var(--line); opacity: 0; visibility: hidden; transform: translate(-50%, 10px); transition: .35s var(--ease); }
 .dropdown::before { content: ''; position: absolute; inset: -14px 0 auto; height: 14px; }
 .has-drop:hover .dropdown, .has-drop:focus-within .dropdown, .has-drop.is-open .dropdown { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
@@ -112,7 +112,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer { position: relative; overflow: hidden; background: radial-gradient(ellipse at top, #2c0c08, var(--maroon-950) 60%); color: rgba(255, 240, 222, .78); padding-top: 72px; font-size: .92rem; }
 .footer-glow { position: absolute; inset: -40% 30% auto; height: 420px; background: radial-gradient(circle, rgba(201, 151, 58, .16), transparent 70%); pointer-events: none; }
 .footer-grid { position: relative; display: grid; grid-template-columns: 1.3fr .8fr 1.2fr 1.2fr; gap: 44px; padding-bottom: 52px; }
-.footer h3 { font-size: 1.15rem; color: var(--gold-light); margin-bottom: 18px; }
+.footer h3, .footer-title { font-size: 1.15rem; color: var(--gold-light); margin-bottom: 18px; }
 .footer ul li { margin-bottom: 9px; }
 .footer ul a { transition: color .3s, padding .3s; }
 .footer ul a:hover { color: var(--gold-light); padding-left: 4px; }

@@ -172,7 +172,7 @@
 .stack-card:nth-child(2) { background: #fffaf2; } .stack-card:nth-child(3) { background: #fff6e8; }
 .stack-card:nth-child(4) { background: linear-gradient(135deg, var(--maroon), var(--red)); color: #fff; }
 .stack-card:nth-child(4) h3 { color: #fff; } .stack-card:nth-child(4) p { color: rgba(255, 240, 222, .85); } .stack-card:nth-child(4) .stack-ic { color: var(--gold-light); }
-.stack-num { font-family: var(--serif); font-size: 3.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--gold); }
+.stack-num { font-family: var(--serif); font-size: 3.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px #9c7020; }
 .stack-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
 .stack-card p { margin: 0; color: var(--muted); }
 .stack-ic { color: var(--gold-deep); transition: transform .6s var(--ease); }
@@ -243,17 +243,7 @@
 .quote-sub { font-size: .84rem; color: var(--muted); margin-bottom: 20px; }
 .quote-form { position: relative; display: grid; gap: 14px; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.field { display: grid; gap: 5px; }
-.field span { font-size: .76rem; font-weight: 600; letter-spacing: .04em; color: var(--maroon-900); }
-.field input, .field select, .field textarea { width: 100%; padding: 12px 14px; font: inherit; font-size: .92rem; color: var(--ink); border-radius: 12px; border: 1.5px solid var(--line); background: #fff; transition: border-color .3s, box-shadow .3s; }
-.field textarea { resize: vertical; min-height: 84px; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201, 151, 58, .18); }
-.field.has-error input, .field.has-error select { border-color: #c42a24; box-shadow: 0 0 0 4px rgba(196, 42, 36, .1); }
-.form-note { margin: 0; font-size: .78rem; color: var(--muted); text-align: center; }
-.form-note a { color: var(--red); font-weight: 600; text-decoration: underline; }
-.form-status { margin: 0; font-size: .86rem; font-weight: 500; text-align: center; color: #1f7a3b; }
-.form-status.is-error { color: #b3161d; }
-.form-status:empty { display: none; }
+/* Form fields: see forms.css */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
