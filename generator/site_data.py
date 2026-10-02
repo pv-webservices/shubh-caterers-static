@@ -12,6 +12,12 @@ BUSINESS = {
     'domain': 'https://shubhcaterers.in',
 }
 
+YEARS_OF_SERVICE = 30
+
+# Client list as supplied by the client (shown on the home and about pages)
+CORPORATE_CLIENTS = ['Two Brothers Organic Farms Pvt. Ltd.', 'Union Bank of India']
+SOCIETY_CLIENTS = ['VTP Beaumonde', 'Godrej Infinity', 'Riverdale Heights', 'Rohan Mithila', 'Amropolis', 'Stargaze', 'Surbhi Township']
+
 # slug, title, short label, icon, image, summary, intro, suitable for, highlights, featured menu picks
 SERVICES = [
     ('wedding-catering', 'Wedding Catering', 'Weddings', 'rings', 'venues/wedding-buffet-night',
@@ -28,7 +34,7 @@ SERVICES = [
      ['Cheese Ball', 'Chilli Paneer', 'Mango Mastani', 'Kiwi Juice', 'Corn Tikka', 'Spring Roll']),
     ('corporate-catering', 'Corporate Catering', 'Corporates', 'briefcase', 'events/corporate-lunch-buffet',
      'Punctual, professional vegetarian catering for meetings, conferences, launches and office celebrations.',
-     'Corporate catering is planned around your schedule, service speed and a menu that works for a mixed group. From breakfast and high-tea to polished buffet lunches, we keep it on time, hygienic and hassle-free.',
+     'Corporate catering is planned around your schedule, service speed and a menu that works for a mixed group. From breakfast and high-tea to polished buffet lunches, we keep it on time, hygienic and hassle-free — which is why organisations like Two Brothers Organic Farms Pvt. Ltd. and Union Bank of India trust us with their events.',
      ['Meetings & Conferences', 'Office Celebrations', 'Product Launches', 'Training Programs'],
      ['Breakfast & high-tea', 'Buffet lunches', 'Tea & coffee service', 'Custom event menus'],
      ['Poha', 'Veg Sandwich', 'Paneer Butter Masala', 'Jeera Rice', 'Fulka Roti', 'Gulab Jamun']),
@@ -216,6 +222,7 @@ PROCESS = [
 
 FAQS = [
     ('Is Shubh Caterers pure vegetarian?', 'Yes. Every menu we serve is 100% vegetarian. Share any special dietary or no onion-garlic requirement while planning and we will discuss what is possible.'),
+    ('How long has Shubh Caterers been in business?', 'We have been serving pure vegetarian food for over 30 years. Our clients include organisations such as Two Brothers Organic Farms Pvt. Ltd. and Union Bank of India, and residential societies across Pune including VTP Beaumonde, Godrej Infinity and Rohan Mithila.'),
     ('Can the menu be customised?', 'Absolutely. Choose from our 350+ dish menu or ask for your family favourites — we shape the menu around your event, guests and budget.'),
     ('Which events do you cater?', 'Weddings, receptions, sangeet evenings, corporate events, birthdays, house warming and pooja ceremonies, baby showers, theme parties, institutional meals and parcel orders.'),
     ('Do you provide live counters?', 'Yes — pani puri, chaat, dosa, pav bhaji, pizza, momos, Chinese, barf gola, ice cream, paan and more, depending on the venue and menu plan.'),

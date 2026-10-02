@@ -5,13 +5,14 @@ The sitemap, robots.txt and _redirects are written by `npm run build` (scripts/b
 from html import escape
 
 from icons import icon, SPRIG
-from site_data import BUSINESS, SERVICES, MENU, CUISINES, VIDEOS, GALLERY, TESTIMONIALS, PROCESS, FAQS
+from site_data import (BUSINESS, SERVICES, MENU, CUISINES, VIDEOS, GALLERY, TESTIMONIALS, PROCESS, FAQS, YEARS_OF_SERVICE,
+                       CORPORATE_CLIENTS, SOCIETY_CLIENTS)
 from templates import (PAGES_DIR, SITE, PHONE_1, PHONE_2, WA_URL, MAP_URL, IMAGES, ORG_ID, img, image_url, btn, heading,
                        inquiry, page_hero, quote_form, document, service_url, faq_schema)
 
 DISH_COUNT = len({d for c in MENU for d in c[4]})
 DISHES = f'{DISH_COUNT // 50 * 50}+'
-STATS = [(15, '+', 'Occasions We Cater'), (DISH_COUNT // 50 * 50, '+', 'Vegetarian Dishes'),
+STATS = [(YEARS_OF_SERVICE, '+', 'Years of Service'), (DISH_COUNT // 50 * 50, '+', 'Vegetarian Dishes'),
          (30, '+', 'Live Counter Options'), (100, '%', 'Pure Vegetarian')]
 FEATURES = [('sparkle', 'Hygienic Preparation'), ('cloche', 'Customised Menus'), ('team', 'Experienced Team'), ('diamond', 'Quality Ingredients')]
 MARQUEE = ['Paneer Tikka', 'Pani Puri', 'Dal Makhani', 'Mango Mastani', 'Masala Dosa', 'Kaju Katli', 'Veg Biryani',
@@ -72,6 +73,15 @@ def testimonial_card(t):
             f'<span><strong>{escape(name)}</strong><small>{escape(kind)}</small></span></figcaption></figure>')
 
 
+def clients_section():
+    corporate = ''.join(f'<li>{icon("briefcase", 20)}{escape(c)}</li>' for c in CORPORATE_CLIENTS)
+    societies = ''.join(f'<li>{icon("home", 18)}{escape(c)}</li>' for c in SOCIETY_CLIENTS)
+    return f'''<section class="section clients"><div class="container">{heading('Our Clients', f'{YEARS_OF_SERVICE}+ Years of', 'Trusted Service', 'For over three decades, leading organisations and some of Pune’s most respected residential societies have trusted Shubh Caterers with their celebrations.')}
+<div class="clients-grid"><div class="client-card client-years" data-reveal="left"><p class="years-mark"><strong><span data-count="{YEARS_OF_SERVICE}">{YEARS_OF_SERVICE}</span>+</strong><span>Years of Catering Excellence</span></p>
+<h3>Corporate Clients</h3><ul class="client-list">{corporate}</ul></div>
+<div class="client-card" data-reveal="right"><h3>Residential Societies</h3><p>Society festivals, community gatherings and family celebrations at:</p><ul class="client-chips">{societies}<li class="client-more">&amp; many more across Pune</li></ul></div></div></div></section>'''
+
+
 # ---------------------------------------------------------------- HOME
 def home():
     slides = [('venues/wedding-buffet-night', 'Golden buffet counters at a wedding night'), ('venues/reception-dining-hall', 'Elegant reception dining hall'),
@@ -108,7 +118,7 @@ def home():
 <div class="ac ac-3" data-parallax="0.1">{img('food/pure-veg-feast', 'Pure vegetarian feast spread', '(max-width: 900px) 70vw, 420px')}</div>
 <div class="quote-ribbon" data-parallax="-0.05"><span>Good Food<br>Brings People<br>Together</span></div></div>
 <div class="about-copy" data-reveal="right">{heading('About Shubh Caterers', 'A Passion for <em>Food,</em><br>A Commitment to', 'Excellence', left=True)}
-<p>Shubh Caterers is a Pune-based pure vegetarian catering service known for delicious food, elegant presentation and seamless execution. From our home in Dhanori, we create memorable culinary experiences for weddings, corporate events, private parties and family celebrations.</p>
+<p>With over {YEARS_OF_SERVICE} years of experience, Shubh Caterers is a Pune-based pure vegetarian catering service known for delicious food, elegant presentation and seamless execution. From our home in Dhanori, we create memorable culinary experiences for weddings, corporate events, private parties and family celebrations.</p>
 <ul class="feature-row">{features}</ul>{btn('Know More About Us', '/about/')}</div></div></section>'''
 
     stats = ''.join(f'<div class="stat" data-reveal><strong><span data-count="{n}">{n}</span>{suf}</strong><span>{l}</span></div>' for n, suf, l in STATS)
@@ -147,7 +157,7 @@ def home():
     testimonials = f'''<section class="section testimonials-home"><div class="sprig sprig-left" data-parallax="-0.1">{SPRIG}</div><div class="container">{heading('Testimonials', 'What', 'Our Clients Say')}
 <div class="testimonial-grid">{''.join(testimonial_card(t) for t in TESTIMONIALS)}</div><div class="center-cta">{btn('Read More Reviews', '/testimonials/', 'outline')}</div></div></section>'''
 
-    body = hero + marquee + services + about + stats_band + menu + videos + process + zoom + gallery + testimonials + inquiry('/')
+    body = hero + marquee + services + about + stats_band + menu + videos + process + zoom + gallery + testimonials + clients_section() + inquiry('/')
     write({'path': '/', 'title': 'Shubh Caterers | Pure Vegetarian Catering Services in Pune',
            'description': f'100% pure vegetarian catering in Pune for weddings, corporate events, birthdays, house warming and baby showers — {DISHES} dishes and live counters.',
            'body': body, 'active': 'Home', 'og_image': og('venues/wedding-buffet-night'), 'og_alt': 'Golden buffet counters at a wedding night'})
@@ -165,16 +175,17 @@ def about():
     crumbs = [HOME, ('/about/', 'About Us')]
     body = page_hero('A Passion for Food,', 'A Commitment to Excellence', 'Pure vegetarian catering from Dhanori, Pune — crafted with love, served with pride.', 'venues/brass-handi-counter', crumbs) + f'''
 <section class="section"><div class="container two-col">
-<div class="stacked-media" data-reveal="left"><div class="sm-main" data-parallax="0.05">{img('team/chef-garnishing-curry', 'Chef preparing paneer tikka masala', '(max-width: 900px) 90vw, 460px')}</div><div class="sm-float" data-parallax="-0.08">{img('food/live-chaat-counter', 'Live chaat counter', '(max-width: 900px) 45vw, 240px')}</div><div class="exp-badge"><strong>100%</strong><span>Pure Veg</span></div></div>
+<div class="stacked-media" data-reveal="left"><div class="sm-main" data-parallax="0.05">{img('team/chef-garnishing-curry', 'Chef preparing paneer tikka masala', '(max-width: 900px) 90vw, 460px')}</div><div class="sm-float" data-parallax="-0.08">{img('food/live-chaat-counter', 'Live chaat counter', '(max-width: 900px) 45vw, 240px')}</div><div class="exp-badge"><strong>{YEARS_OF_SERVICE}+</strong><span>Years</span></div></div>
 <div class="prose" data-reveal="right">{heading('Our Story', 'Where Every Occasion', 'Becomes Shubh', left=True)}
-<p><strong>Shubh</strong> means auspicious — and that is exactly how we want every celebration we cater to feel. Led by <strong>Pawan Agarwal</strong> and <strong>Ajay Agarwal</strong>, Shubh Caterers serves weddings, corporate functions, family occasions and private events across Pune with a strictly pure-vegetarian kitchen.</p>
+<p><strong>Shubh</strong> means auspicious — and for over {YEARS_OF_SERVICE} years, that is exactly how we have wanted every celebration we cater to feel. Led by <strong>Pawan Agarwal</strong> and <strong>Ajay Agarwal</strong>, Shubh Caterers serves weddings, corporate functions, family occasions and private events across Pune with a strictly pure-vegetarian kitchen.</p>
 <p>We begin by understanding your event — the format, your guests, the venue and your expectations — and then shape a menu and service plan around it. From Maharashtrian breakfasts to Punjabi feasts, Indo-Chinese starters to halwai-style mithai, our menu covers {DISH_COUNT}+ dishes — see the <a href="/menu/">full menu</a> or our <a href="/services/">catering services</a>.</p>
 <ul class="tick-list">{''.join(f'<li>{icon("check", 18, stroke=2)}{t}</li>' for t in ['We accept party & marriage orders of every size', 'Buffet, live-counter and traditional pangat service', 'Clear, no-obligation quotes'])}</ul>
 <div class="hero-actions">{btn('Get a Free Quote', '/contact/#quote')}{btn('View Our Menu', '/menu/', 'outline', 'menu-book')}</div></div></div></section>
 <section class="section alt"><div class="container">{heading('Why Choose Us', 'What Makes Us', 'Shubh', 'Six promises we keep at every event.')}<div class="value-grid">{cards}</div></div></section>
+{clients_section()}
 <section class="section showcase compact"><div class="container">{heading('Behind the Scenes', 'Our Team', 'at Work')}<div class="video-row">{''.join(video_card(v) for v in VIDEOS[:3])}</div></div></section>''' + inquiry('/about/')
     write({'path': '/about/', 'title': 'About Us | Shubh Caterers, Pure Veg Caterers in Pune', 'page_type': 'AboutPage',
-           'description': 'Shubh Caterers is a pure vegetarian catering company in Dhanori, Pune, led by Pawan Agarwal and Ajay Agarwal — weddings, corporate events and celebrations.',
+           'description': f'Shubh Caterers: {YEARS_OF_SERVICE}+ years of pure vegetarian catering in Dhanori, Pune, led by Pawan Agarwal and Ajay Agarwal — trusted by corporates and housing societies.',
            'body': body, 'active': 'About Us', 'crumbs': crumbs, 'og_image': og('venues/brass-handi-counter'), 'og_alt': 'Brass handi buffet counter with floral décor'})
 
 
